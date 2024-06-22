@@ -1,0 +1,52 @@
+import java.util.*;
+class arrayValueRange
+ {
+  public static void main(String[]args)
+  {
+   
+   
+   Scanner sc=new Scanner(System.in);
+   System.out.print("Enter Array Size:");
+   int n=sc.nextInt();
+  
+   int[]arr=new int[n];
+
+   for(int i=0;i<n;i++)
+	{
+         System.out.print("Enter array element for::"+i+"----->");
+	 arr[i]=sc.nextInt();
+	}
+
+   System.out.print("Enter Start Value :");
+
+   int start=sc.nextInt();
+
+   System.out.print("Enter End Value:");
+
+   int end=sc.nextInt();
+  
+   int startIndex=0;
+   int endIndex=0;
+
+      for(int i=0;i<n;i++)
+            {
+                if(arr[i]==start )
+                 {
+                  startIndex=i;
+                 }
+		if(arr[i]==end )
+                 {
+                  endIndex=i;
+                 }
+            }  
+     
+            for(int i=startIndex+1;i<endIndex;i++)
+            {
+                
+  		System.out.print(arr[i]);             
+                 
+              
+            }                
+ 
+}
+}
