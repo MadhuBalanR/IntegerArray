@@ -1,0 +1,35 @@
+import java.util.*;
+
+class swapArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Array Size: ");
+        int n = sc.nextInt();
+        
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++)
+         {
+            System.out.print("Enter array element for " + i + ": ");
+            arr[i] = sc.nextInt();
+        }
+       System.out.print("ENTER HOW MANY DIGITS TO BE SWAPPED:");
+       int swapLimit=sc.nextInt();
+       int a=0;
+  
+        for (int i = 0; i < n; i++)
+           {
+                 if(i<=swapLimit || i>=n-swapLimit)
+ 			{
+			  int temp=arr[a];
+			  arr[a]=arr[n-swapLimit];
+			  arr[n-swapLimit]=temp;
+                          swapLimit--;
+                          a++;
+            
+           		}
+            }
+        System.out.print(Arrays.toString(arr));
+         
+    }
+}
