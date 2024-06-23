@@ -1,0 +1,60 @@
+import java.util.*;
+
+class extraElement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter First Array Size: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter array1 element for " + i + ": ");
+            arr[i] = sc.nextInt();
+        }
+        
+        System.out.println("FIRST ARRAY------> " + Arrays.toString(arr));
+        System.out.println("---------*-----------");
+        
+        System.out.print("Enter Second Array Size: ");
+        int m = sc.nextInt();
+        int[] aar = new int[m];
+        
+        for (int i = 0; i < m; i++) {
+            System.out.print("Enter array2 element for " + i + ": ");
+            aar[i] = sc.nextInt();
+        }
+        
+        System.out.println("SECOND ARRAY------> " + Arrays.toString(aar));
+
+        if (n > m) {
+            for (int i = 0; i < n; i++) {
+                boolean flag = false;
+                for (int j = 0; j < m; j++) {
+                    if (arr[i] == aar[j]) {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag) {
+                    System.out.println("EXTRA ELEMENT IS: " + arr[i]);
+                    System.out.println("EXTRA ELEMENT INDEX IS: " + i);
+                }
+            }
+        } else {
+            for (int i = 0; i < m; i++) {
+                boolean flag = false;
+                for (int j = 0; j < n; j++) {
+                    if (aar[i] == arr[j]) {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag) {
+                    System.out.println("EXTRA ELEMENT IS: " + aar[i]);
+                    System.out.println("EXTRA ELEMENT INDEX IS: " + i);
+                }
+            }
+        }
+    }
+}
