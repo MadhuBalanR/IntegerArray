@@ -1,0 +1,35 @@
+import java.util.*;
+
+class occcurance {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Array Size: ");
+        int n = sc.nextInt();
+        
+        int[] arr = new int[n];
+
+        // Input array elements
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter array element for " + i + ": ");
+            arr[i] = sc.nextInt();
+        }
+
+        // Count occurrences and print elements with counts
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            boolean flag = true;
+            for (int j = 0; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                    if (i > j) { // Ensure only the first occurrence of each element is counted
+                        flag = false;
+                    }
+                }
+            }
+            // Print element and its count only once
+            if (flag) {
+                System.out.println(arr[i] + " occurs " + count + " times.");
+            }
+        }
+    }
+}
